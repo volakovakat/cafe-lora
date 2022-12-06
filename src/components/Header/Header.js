@@ -2,6 +2,7 @@ import "./Header.css";
 
 export const Header = () => {
     const element = document.createElement('header');
+
     element.innerHTML = `
       <div class="header__content container">
         <div class="site-logo"></div>
@@ -19,5 +20,16 @@ export const Header = () => {
       </div>
    `;
 
+    let navBtn = element.querySelector(".nav-btn");
+    let rolloutNav = element.querySelector(".rollout-nav");
+
+    navBtn.addEventListener("click", () => {
+        rolloutNav.classList.toggle("nav-closed");
+    })
+
     return element;
+
+
 };
+
+
