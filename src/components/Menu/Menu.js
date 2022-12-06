@@ -1,10 +1,22 @@
 import "./Menu.css";
-import {Layer} from "./components/Layer/Layer.js";
+import {Drink} from "./components/Drink/Drink.js";
 
-const layerProps = {
-   color: '#feeeca',
-   label: 'mléčná pěna',
-}
+const drinkProps = {
+   id: 'romano',
+   name: 'Romano',
+   ordered: false,
+   image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
+   layers: [
+      {
+         color: '#fbdf5b',
+         label: 'citrón',
+      },
+      {
+         color: '#613916',
+         label: 'espresso',
+      },
+   ]
+};
 
 export const Menu = () => {
    const element = document.createElement('section');
@@ -17,23 +29,7 @@ export const Menu = () => {
          Vyberte si z našeho interaktivního menu a nemusíte čekat na obsluhu
        </p>
        <div class="drinks-list">
-         <div class="drink">
-           <div class="drink__product">
-             <div class="drink__cup">
-               <img src="https://apps.kodim.cz/daweb/cafelora/assets/cups/espresso.png">
-             </div>
-             <div class="drink__info">
-               <h3>Espresso</h3>
-                 ${Layer(layerProps)}
-             </div>
-           </div>
-           <div class="drink__controls">
-             <button class="order-btn">
-               Objednat
-             </button>
-           </div>
-         </div>
-
+            ${Drink(drinkProps)}
          <div class="drink">
            <div class="drink__product">
              <div class="drink__cup">
