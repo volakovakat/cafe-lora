@@ -1,4 +1,10 @@
 import "./Menu.css";
+import {Layer} from "./components/Layer/Layer.js";
+
+const layerProps = {
+   color: '#feeeca',
+   label: 'mléčná pěna',
+}
 
 export const Menu = () => {
    const element = document.createElement('section');
@@ -18,10 +24,7 @@ export const Menu = () => {
              </div>
              <div class="drink__info">
                <h3>Espresso</h3>
-               <div class="layer">
-                 <div class="layer__color" style="background-color: #613916"></div>
-                 <div class="layer__label">espresso</div>
-               </div>
+                 ${Layer(layerProps)}
              </div>
            </div>
            <div class="drink__controls">
